@@ -2,7 +2,7 @@ import { InferSchemaType, Schema, model } from "mongoose";
 
 const noteSchema = new Schema(
   {
-    title: {
+    tittle: {
       type: String,
       required: true,
     },
