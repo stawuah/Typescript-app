@@ -4,7 +4,10 @@ import express, { NextFunction, Request, Response } from "express";
 import noteRoutes from "./routes/noteRoutes";
 
 const app = express();
+app.use(express.json());
+
 app.use("/api/notes", noteRoutes);
+app.use("/api/createNotes", noteRoutes);
 
 app.use((req, res, next) => {
   next(Error("Endpoint not found"));
