@@ -1,19 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import "dotenv/config";
-import NoteModel from "./model/note";
 import express, { NextFunction, Request, Response } from "express";
+import noteRoutes from "./routes/noteRoutes";
+
 const app = express();
-
-app.get("/", async (_req, res, next) => {
-  try {
-    //throw Error("Bazinga");
-    const notes = await NoteModel.find().exec();
-
-    res.status(200).json({ notes });
-  } catch (error) {
-    next(error);
-  }
-});
+app.use("/api/notes", noteRoutes);
 
 app.use((req, res, next) => {
   next(Error("Endpoint not found"));
