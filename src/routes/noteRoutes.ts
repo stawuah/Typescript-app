@@ -5,10 +5,12 @@ import {
   getNotes,
   createNotes,
   getSingleNote,
+  updateNote,
 } from "../controller/noteController";
 
 router.get("/", getNotes);
-router.post("/", createNotes);
+router.post("/create", createNotes);
 router.get("/:id", getSingleNote);
+router.patch("/:id", updateNote);
 
 export default router;
