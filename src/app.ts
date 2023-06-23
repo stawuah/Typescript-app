@@ -17,6 +17,8 @@ app.use("/api/notes", noteRoutes);
 
 app.use("/api/notes/change", noteRoutes);
 
+app.use("/api/notes/delete", noteRoutes);
+
 app.use((req, res, next) => {
   next(createHttpError(404, "Endpoint not found"));
 });
