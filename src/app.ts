@@ -32,5 +32,4 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
   }
   res.status(statusCode).json({ error: errorMassage });
 });
-
 export default app;
